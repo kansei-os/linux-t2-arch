@@ -55,12 +55,11 @@ jobs:
             ${{ github.workspace }}/*.zip
             ${{ github.workspace }}/*.pkg.tar.*
           tag_name: v${{ steps.create_tag.outputs.tag }}
-          name: ${{ steps.create_tag.outputs.tag }} - Release Watanare
+          name: ${{ steps.create_tag.outputs.tag }} - Release Jinba Ittai
           draft: ${{ contains(github.event.head_commit.message, '[draft]') }}
           prerelease: ${{ contains(github.event.head_commit.message, '[prerel]') }}
           body: |
-            This release features Renako Amaori from There's No Freaking Way I'll Be Your Lover! Unless..., celebrating announcement of anime adaptation!
-            Every major release will feature new anime/manga and minor releases will have different characters!
-            Install packages with `sudo pacman -U <file>`, you can use urls or file paths.
+            This is the same as the manual release from yesterday. These were built with the github runner rather than the arch build container on my selfhosting infra.
+            'sudo pacman -U <file>' to install or insert into your build pipeline for your custom Arch-based composable immutable image or what have you.
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
