@@ -59,7 +59,7 @@ jobs:
           draft: ${{ contains(github.event.head_commit.message, '[draft]') }}
           prerelease: ${{ contains(github.event.head_commit.message, '[prerel]') }}
           body: |
-            Here is the latest stable kernel release, build from the Arch Linux kernel sources.
+            Here is the latest stable kernel release, built from the Arch Linux kernel sources.
             'sudo pacman -U <file_or_url_path>' to install, or insert into the build pipeline for your custom Arch-based composable immutable image however you'd like.
         env:
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
